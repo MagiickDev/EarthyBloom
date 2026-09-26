@@ -1,0 +1,113 @@
+# Paste the backend block from your DecapBridge site dashboard (same as Vineyl Fantasy).
+backend:
+  name: git-gateway
+  repo: YOUR_GITHUB_USER/earthy-blooms
+  branch: main
+  identity_url: https://auth.decapbridge.com/sites/YOUR_SITE_ID
+  gateway_url: https://gateway.decapbridge.com
+
+site_url: https://YOUR-SITE.netlify.app
+display_url: https://YOUR-SITE.netlify.app
+logo_url: /brand/logo.png
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: products
+    label: Products
+    label_singular: Product
+    description: Arrangements shown in the "Shop the season" grid.
+    folder: content/products
+    create: true
+    delete: true
+    format: json
+    extension: json
+    slug: "{{slug}}"
+    identifier_field: name
+    summary: "{{name}} ({{price}})"
+    sortable_fields: [order, name, price]
+    fields:
+      - { label: Name, name: name, widget: string }
+      - { label: Price, name: price, widget: number, value_type: float, min: 0, step: 0.01 }
+      - { label: Photo, name: photo, widget: image, hint: "Portrait photos look best (4:5)." }
+      - { label: Photo description, name: photoAlt, widget: string, required: false, hint: "What's in the photo, for screen readers. e.g. Orange roses and eucalyptus in a clay vase." }
+      - { label: Display order, name: order, widget: number, value_type: int, default: 10, hint: "Lower numbers show first." }
+      - { label: Show on site, name: available, widget: boolean, default: true, hint: "Turn off to hide a sold-out item without deleting it." }
+      - { label: Buy link, name: buyLink, widget: string, required: false, pattern: ["^https://", "Must start with https://"], hint: "Optional. A Stripe or Square payment link. Leave empty to show an Order button that opens the order form." }
+
+  - name: seasons
+    label: Seasons
+    description: The big photo at the top of the homepage. The site picks the season set in Site settings.
+    files:
+      - label: Spring
+        name: spring
+        file: content/seasons/spring.json
+        fields:
+          - { label: Hero photo, name: image, widget: image, required: false, hint: "Wide landscape photo, at least 2400px wide." }
+          - { label: Photo description, name: imageAlt, widget: string, required: false }
+          - { label: Headline, name: headline, widget: string }
+          - { label: Subheading, name: subheading, widget: text }
+          - { label: Button text, name: buttonText, widget: string }
+      - label: Summer
+        name: summer
+        file: content/seasons/summer.json
+        fields:
+          - { label: Hero photo, name: image, widget: image, required: false, hint: "Wide landscape photo, at least 2400px wide." }
+          - { label: Photo description, name: imageAlt, widget: string, required: false }
+          - { label: Headline, name: headline, widget: string }
+          - { label: Subheading, name: subheading, widget: text }
+          - { label: Button text, name: buttonText, widget: string }
+      - label: Fall
+        name: fall
+        file: content/seasons/fall.json
+        fields:
+          - { label: Hero photo, name: image, widget: image, required: false, hint: "Wide landscape photo, at least 2400px wide." }
+          - { label: Photo description, name: imageAlt, widget: string, required: false }
+          - { label: Headline, name: headline, widget: string }
+          - { label: Subheading, name: subheading, widget: text }
+          - { label: Button text, name: buttonText, widget: string }
+      - label: Winter
+        name: winter
+        file: content/seasons/winter.json
+        fields:
+          - { label: Hero photo, name: image, widget: image, required: false, hint: "Wide landscape photo, at least 2400px wide." }
+          - { label: Photo description, name: imageAlt, widget: string, required: false }
+          - { label: Headline, name: headline, widget: string }
+          - { label: Subheading, name: subheading, widget: text }
+          - { label: Button text, name: buttonText, widget: string }
+
+  - name: pages
+    label: Site settings
+    files:
+      - label: General
+        name: site
+        file: content/site.json
+        fields:
+          - label: Current season
+            name: currentSeason
+            widget: select
+            default: auto
+            options:
+              - { label: "Automatic (by month)", value: auto }
+              - { label: Spring, value: spring }
+              - { label: Summer, value: summer }
+              - { label: Fall, value: fall }
+              - { label: Winter, value: winter }
+          - { label: Announcement bar, name: announcement, widget: string, required: false, hint: "Leave empty to hide the bar." }
+          - label: Contact
+            name: contact
+            widget: object
+            fields:
+              - { label: Phone, name: phone, widget: string }
+              - { label: Email, name: email, widget: string }
+              - { label: Instagram name, name: instagramName, widget: string }
+              - { label: Instagram link, name: instagramUrl, widget: string, required: false }
+      - label: About
+        name: about
+        file: content/about.json
+        fields:
+          - { label: Heading, name: heading, widget: string }
+          - { label: Photo, name: photo, widget: image, required: false }
+          - { label: Photo description, name: photoAlt, widget: string, required: false }
+          - { label: Text, name: body, widget: text, hint: "Leave a blank line between paragraphs." }
