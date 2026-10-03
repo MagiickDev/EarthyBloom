@@ -2,6 +2,7 @@
 // Vite bundles it at build time, so every CMS save triggers a Netlify rebuild.
 import site from '../../content/site.json';
 import about from '../../content/about.json';
+import policy from '../../content/policy.json';
 
 const fileName = (path) => path.split('/').pop().replace(/\.json$/, '');
 
@@ -17,4 +18,4 @@ export const products = Object.entries(productFiles)
   .filter((p) => p.available !== false)
   .sort((a, b) => (a.order ?? 999) - (b.order ?? 999) || a.name.localeCompare(b.name));
 
-export { site, about };
+export { site, about, policy };

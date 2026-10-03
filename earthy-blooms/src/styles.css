@@ -157,6 +157,15 @@ p { margin: 0; }
 .about__text p { font-size: 18px; line-height: 1.75; }
 .about__text .button { align-self: flex-start; margin-top: 8px; }
 
+/* Substitution policy */
+.policy { max-width: var(--max); margin: 0 auto; padding: clamp(56px, 7vw, 104px) var(--gutter) 0; }
+.policy__panel {
+  max-width: 860px; border: 1px solid var(--line); background: #fbf9f5;
+  padding: clamp(28px, 4vw, 48px); display: flex; flex-direction: column; gap: 14px;
+}
+.policy__heading { font-size: clamp(26px, 2.4vw, 32px); color: var(--green); margin-bottom: 4px; }
+.policy__panel p { color: var(--muted); font-size: 15px; line-height: 1.75; }
+
 /* Order form */
 .order { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 96px); }
 .order__intro p { color: var(--muted); max-width: 420px; }

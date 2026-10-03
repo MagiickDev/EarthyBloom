@@ -111,3 +111,9 @@ collections:
           - { label: Photo, name: photo, widget: image, required: false }
           - { label: Photo description, name: photoAlt, widget: string, required: false }
           - { label: Text, name: body, widget: text, hint: "Leave a blank line between paragraphs." }
+      - label: Substitution policy
+        name: policy
+        file: content/policy.json
+        fields:
+          - { label: Heading, name: heading, widget: string }
+          - { label: Text, name: body, widget: text, hint: "Shown above the order form. Leave a blank line between paragraphs." }

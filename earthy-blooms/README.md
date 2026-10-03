@@ -23,6 +23,7 @@ npm run dev
 | Seasonal hero | `content/seasons/{spring,summer,fall,winter}.json` | Seasons |
 | Current season, announcement bar, contact info | `content/site.json` | Site settings → General |
 | About section | `content/about.json` | Site settings → About |
+| Substitution policy (above the order form) | `content/policy.json` | Site settings → Substitution policy |
 
 Uploads go to `public/uploads/`. In production they're served through Netlify Image CDN (`src/lib/image.js`), so full-size phone photos are fine.
 
