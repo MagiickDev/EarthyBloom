@@ -33,4 +33,3 @@ Uploads go to `public/uploads/`. In production they're served through Netlify Im
 - **Buy link:** if a product has one (a Stripe/Square payment link), its button says **Buy now**. If not, it says **Order**, which pre-fills the request form.
 - **Hidden products:** products with `available: false` are hidden. A price of `0` hides the price line.
 - **Form fields:** if you change the order form fields, update the hidden form in `index.html` to match. Netlify detects forms from that static copy.
-- **Sample content:** delete `content/products/sample-arrangement-*.json` once real products are in.

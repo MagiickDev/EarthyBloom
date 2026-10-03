@@ -1,0 +1,9 @@
+{
+  "name": "Wrapped Wild Flower Dozen",
+  "price": 59.99,
+  "photo": "/uploads/wrapped-wild-flower-dozen.jpg",
+  "photoAlt": "A dozen red roses with white chamomile daisies and eucalyptus, wrapped in kraft paper",
+  "order": 1,
+  "available": true,
+  "buyLink": ""
+}

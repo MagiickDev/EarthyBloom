@@ -1,0 +1,9 @@
+{
+  "name": "Fall State of Mind",
+  "price": 45.99,
+  "photo": "/uploads/fall-state-of-mind.jpg",
+  "photoAlt": "Red roses, coral carnations, rust daisy mums and yellow craspedia with eucalyptus in a white ceramic face vase",
+  "order": 3,
+  "available": true,
+  "buyLink": ""
+}

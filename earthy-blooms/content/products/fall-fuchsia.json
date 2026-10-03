@@ -1,0 +1,9 @@
+{
+  "name": "Fall Fuchsia",
+  "price": 99.99,
+  "photo": "/uploads/fall-fuchsia.jpg",
+  "photoAlt": "Fuchsia mums and calla lilies with white hydrangea, white roses, veronica and eucalyptus in a clear glass vase",
+  "order": 4,
+  "available": true,
+  "buyLink": ""
+}
